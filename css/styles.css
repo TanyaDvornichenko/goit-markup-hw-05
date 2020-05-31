@@ -52,7 +52,7 @@ img {
   width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
-  outline: 2px solid goldenrod;
+  /* outline: 2px solid goldenrod; */
 }
 
 h1,
@@ -91,6 +91,10 @@ p {
 .mail-nav {
   display: flex;
   margin-left: auto;
+}
+
+.nav-icon {
+  margin-right: 10px;
 }
 
 .site-nav .item:not(:last-child),
@@ -139,6 +143,7 @@ p {
 .site-nav .link:hover,
 .site-nav .link:focus {
   color: var(--accent-color);
+  cursor: pointer;
 }
 
 .site-nav .link.current {
@@ -146,7 +151,8 @@ p {
 }
 
 .contacts-nav .link {
-  display: block;
+  display: flex;
+  align-items: center;
   padding-top: 32px;
   padding-bottom: 32px;
 
@@ -157,18 +163,21 @@ p {
 .contacts-nav .link:hover,
 .contacts-nav .link:focus {
   color: var(--accent-color);
+  cursor: pointer;
+  fill: currentColor;
 }
 
 /* Hero */
 .hero {
   text-align: center;
+  padding-top: 200px;
+  padding-bottom: 200px;
 
-  outline: 2px solid red;
+  /* outline: 2px solid red; */
 }
 
 .hero-title {
   color: var(--primary-white-color);
-  background-color: gainsboro;
 
   font-weight: 900;
   font-size: 44px;
@@ -177,9 +186,31 @@ p {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 
-  margin-bottom: 46px;
+  width: 696px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
 }
 
+/* Overlay */
+
+.overlay {
+  max-width: 1600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  /* outline: 1px solid black; */
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.8),
+      rgba(47, 48, 58, 0.8)
+    ),
+    url("../images/header-img.jpg");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 /* Button */
 
 .button {
@@ -253,6 +284,15 @@ p {
   margin-right: 30px;
 }
 
+.features-icon {
+  display: block;
+  padding: 25px 100px;
+  background-color: var(--bg-btn-fltr-color);
+  border-radius: 4px;
+
+  margin-bottom: 30px;
+}
+
 .title.features {
   margin-bottom: 10px;
 
@@ -295,7 +335,7 @@ p {
 }
 
 /* На будущее - текст на картинку */
-/* .img-wrap {
+.img-wrap {
   position: relative;
 }
 
@@ -304,7 +344,8 @@ p {
   left: 0;
   bottom: 0;
   width: 100%;
-} */
+}
+
 .subtitle {
   padding-top: 27px;
   padding-bottom: 27px;
@@ -327,13 +368,18 @@ p {
 }
 
 .flex-command .item {
-  padding-bottom: 36px;
-
   width: 278px;
   background-color: var(--primary-white-color);
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 1px 3px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
+}
+
+.card-command {
+  padding-top: 30px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 24px;
 }
 
 .flex-command .item:not(:last-child) {
@@ -342,11 +388,7 @@ p {
 
 .flex-social {
   display: flex;
-  justify-content: space-evenly;
-}
-
-.photo {
-  margin-bottom: 30px;
+  justify-content: space-between;
 }
 
 .title.medium {
@@ -359,9 +401,24 @@ p {
   letter-spacing: 0.03em;
 }
 
+.icon-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  fill: #afb1b8;
+}
+
+.icon-social:hover {
+  background-color: var(--accent-color);
+  fill: var(--primary-white-color);
+}
+
 /* Профессии нашей команды */
 .text-small {
-  margin-bottom: 29px;
+  margin-bottom: 16px;
 
   font-weight: 400;
   font-size: 16px;
@@ -388,6 +445,22 @@ p {
 
 .flex-company .item:not(:last-child) {
   margin-right: 30px;
+}
+
+.company-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 90px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+  fill: #afb1b8;
+}
+
+.company-icon:hover {
+  border-color: var(--accent-color);
+  fill: var(--accent-color);
 }
 
 /* Footer */
@@ -476,10 +549,31 @@ p {
   letter-spacing: 0.06em;
 }
 
+.page-footer .icon-social {
+  background-color: rgba(255, 255, 255, 0.1);
+  fill: #ffffff;
+}
+
+.page-footer .icon-social:hover {
+  background-color: var(--accent-color);
+}
+
+.page-footer .item:not(:last-child) {
+  margin-right: 10px;
+}
 .slogan {
   margin-right: 164px;
 }
 
+.subscribe {
+  display: flex;
+  align-items: center;
+  fill: #ffffff;
+}
+
+.subscribe p {
+  margin-right: 10px;
+}
 .author {
   margin-top: 18px;
 
@@ -516,7 +610,7 @@ p {
   border-radius: 4px;
 }
 
-.btn-filter {
+.btn-filter:not(:last-child) {
   margin-right: 8px;
 }
 
@@ -526,6 +620,7 @@ p {
   background-color: var(--accent-color);
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 3px 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 .flex-examples {
@@ -539,6 +634,12 @@ p {
   margin: 15px;
 
   background: var(--primary-white-color);
+}
+
+.flex-examples .item:hover {
+  cursor: pointer;
+  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    0px 1px 1px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio h2 {
@@ -558,7 +659,6 @@ p {
   line-height: 1.87;
   letter-spacing: 0.03em;
 }
-
 .description {
   color: var(--primary-white-color);
 
@@ -570,9 +670,9 @@ p {
 /* Оформление карточек портфолио */
 .card {
   width: 370px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  overflow: hidden;
+  /* border-top-left-radius: 5px;
+  border-top-right-radius: 5px; 
+  overflow: hidden;*/
 }
 
 .card-content {
@@ -581,6 +681,6 @@ p {
   /* Рамка не везде а только с трёх сторон */
   border: 1px solid #eeeeee;
   border-top: 0;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
+  /* border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px; */
 }
